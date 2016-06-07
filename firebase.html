@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Seth's Projects</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+</head>
+<body>
+  <div class="section hero">
+    <div class="container">
+      <input id="username" type="text" placeholder="Name"><br/>
+      <input id="text" type="text" placeholder="Message"><br/>
+      <button id="post">Post</button><br/>
+      <div id="results"></div>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+
+    var config = {
+      apiKey: "AIzaSyAkGZVRkoTplaKfEhT6BfKprHZrXutZZGw",
+      authDomain: "event-database-755cd.firebaseapp.com",
+      databaseURL: "https://event-database-755cd.firebaseio.com",
+      storageBucket: "event-database-755cd.appspot.com",
+    };
+    firebase.initializeApp(config);
+
+
+  var usernameInput = document.querySelector('#username');
+  var textInput = document.querySelector('#text');
+  var postButton = document.querySelector('#post');
+    postButton.addEventListener("click", function() {
+      var msgUser = usernameInput.value;
+      var msgText = textInput.value;
+      // replace myFirebase.set(...); with the next line
+      firebase.database().ref().push({username:msgUser, text:msgText});
+      textInput.value = "";
+    });
+
+    firebase.database().ref().on('child_added', function(snapshot) {
+      var msg = snapshot.val();
+
+      var msgUsernameElement = document.createElement("b");
+      msgUsernameElement.textContent = msg.username;
+
+      var msgTextElement = document.createElement("p");
+      msgTextElement.textContent = msg.text;
+
+      var msgElement = document.createElement("div");
+      msgElement.appendChild(msgUsernameElement);
+      msgElement.appendChild(msgTextElement);
+
+      document.getElementById("results").appendChild(msgElement);
+    });
+
+  </script>
+
+
+</body>
+</html>

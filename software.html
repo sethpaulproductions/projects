@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Seth's Projects</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src='https://cdn.firebase.com/js/client/2.4.0/firebase.js'></script>
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+   <div class="section hero">
+     <div class="container">
+       <div class="row">
+         <div class="one-half column">
+           <input id="username" type="text" placeholder="Name"><br/>
+           <input id="text" type="text" placeholder="Message"><br/>
+           <button id="post" onclick="writeUserData()">Post</button><br/>
+           <div id="results"></div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+<!--  <div class="container">
+   <form>
+     <div class="row">
+       <div class="six columns">
+         <label for="exampleEmailInput">Your email</label>
+         <input class="u-full-width" id="exampleEmailInput" type="email" placeholder="test@mailbox.com">
+       </div>
+       <div class="six columns">
+         <label for="exampleRecipientInput">Reason for contacting</label>
+         <select class="u-full-width" id="exampleRecipientInput">
+           <option value="Option 1">Questions</option>
+           <option value="Option 2">Admiration</option>
+           <option value="Option 3">Can I get your number?</option>
+         </select>
+       </div>
+     </div>
+     <label for="exampleMessage">Message</label>
+     <textarea class="u-full-width" id="exampleMessage" placeholder="Hi Dave …"></textarea>
+     <label class="example-send-yourself-copy">
+       <input type="checkbox">
+       <span class="label-body">Send a copy to yourself</span>
+     </label>
+     <input class="button-primary" type="submit" value="Submit" onclick = "writeUserData()">
+   </form> -->
+ </div>
+
+   <div class="section values">
+     <div class="container">
+       <div class="row">
+         <div class="one-third column value">
+
+         </div>
+         <div class="one-third column value">
+
+         </div>
+         <div class="one-third column value">
+
+         </div>
+       </div>
+     </div>
+   </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+  <script src='js/database.js'></script>
+
+</body>
+</html>
